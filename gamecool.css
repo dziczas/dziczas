@@ -10,99 +10,108 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
   transition: all 0.5s ease;
 }
 
-/* Retro Colors */
-body {
-  --primary-color: #ff4081;
-  --secondary-color: #7c4dff;
-  --tertiary-color: #00e676;
-  --bg-color: #f0f4c3;
-  --accent-color: #ffeb3b;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .profile-photo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .game-button {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+
+  .cv-banner {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .skills-life-bar {
+    top: 5px;
+    left: 10px;
+  }
+
+  .skills-life-bar h3 {
+    font-size: 18px;
+  }
+
+  .skill p {
+    font-size: 14px;
+  }
+
+  .bar {
+    width: 150px;
+  }
+
+  .fill {
+    height: 100%;
+  }
+
+  /* Reduce paddings and margins on mobile */
+  .color-switch {
+    top: 5px;
+    right: 5px;
+  }
+
+  .color-toggle {
+    font-size: 14px;
+  }
 }
 
-/* Modern Color Palette */
-body.modern-palette {
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
-  --tertiary-color: #f39c12;
-  --bg-color: #ecf0f1;
-  --accent-color: #e74c3c;
-}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
 
-.skills-life-bar {
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  color: #333;
-  font-family: 'Courier New', monospace;
-}
+  .subtitle {
+    font-size: 14px;
+  }
 
-.skills-life-bar h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
+  .profile-photo img {
+    width: 100px;
+    height: 100px;
+  }
 
-.skill {
-  margin-bottom: 20px;
-}
+  .game-button {
+    font-size: 14px;
+    padding: 7px 12px;
+  }
 
-.skill p {
-  margin: 0;
-  font-size: 16px;
-  color: var(--primary-color);
-}
+  .cv-banner {
+    padding: 8px;
+    font-size: 14px;
+  }
 
-.life-bar {
-  display: flex;
-  align-items: center;
-}
+  .skills-life-bar h3 {
+    font-size: 16px;
+  }
 
-.heart-icon {
-  width: 30px;
-  height: auto;
-  margin-right: 10px;
-}
-
-.bar {
-  position: relative;
-  width: 200px;
-  height: 20px;
-  background: var(--secondary-color);
-  border: 2px solid #000;
-  border-radius: 5px;
-}
-
-.fill {
-  height: 100%;
-  background-color: var(--accent-color);
-  border-radius: 3px;
-  transition: width 0.4s ease;
-}
-
-/* Color switcher button */
-.color-switch {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.color-toggle {
-  background: transparent;
-  color: var(--primary-color);
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: 'Courier New', monospace;
-  text-decoration: underline;
-  transition: color 0.4s ease;
-}
-
-.color-toggle:hover {
-  color: var(--secondary-color);
+  .bar {
+    width: 120px;
+  }
 }
 
 /* Main Retro Portfolio Frame */
@@ -127,19 +136,6 @@ body.modern-palette {
   z-index: 10;
 }
 
-.animated-card {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-} */
-
 /* Profile Picture Animation */
 .profile-photo img {
   width: 150px;
@@ -147,17 +143,7 @@ body.modern-palette {
   border-radius: 50%;
   border: 5px solid var(--primary-color);
   margin-bottom: 20px;
-  animation: rotate 10s linear infinite;
 }
-
-/* @keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 h1 {
   font-size: 32px;
@@ -166,32 +152,11 @@ h1 {
   margin-bottom: 10px;
 }
 
-.crazy-text {
-  animation: crazy-text-animation 3s ease-in-out infinite alternate;
-}
-
-@keyframes crazy-text-animation {
-  0% {
-    transform: rotate(0deg) scale(1);
-    color: var(--primary-color);
-  }
-  100% {
-    transform: rotate(-3deg) scale(1.05);
-    color: var(--secondary-color);
-  }
-}
-
 .subtitle {
   font-size: 20px;
   color: var(--tertiary-color);
   font-style: italic;
   margin-bottom: 30px;
-}
-
-.info p {
-  font-size: 18px;
-  color: var(--primary-color);
-  margin: 10px 0;
 }
 
 /* Game Buttons */
@@ -224,7 +189,6 @@ h1 {
   border-radius: 10px;
   padding: 15px;
   margin-top: 30px;
-  animation: shake 1.5s infinite;
 }
 
 .cv-banner a {
@@ -238,34 +202,9 @@ h1 {
   background: var(--secondary-color);
 }
 
-/* Hover Shake Animation */
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  75% {
-    transform: translateX(5px);
-  }
-}
-
 /* Fade animation for skill switching */
 .skills-list {
   transition: opacity 0.5s ease;
-}
-
-body {
-  font-family: 'Courier New', monospace;
-  background: var(--bg-color);
-  color: var(--text-color); /* Ensure text color adapts to the palette */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-  transition: all 0.5s ease;
 }
 
 h1, h2, h3, p {
