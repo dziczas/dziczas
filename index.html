@@ -36,13 +36,6 @@
     <button class="color-toggle" onclick="toggleColors()">What are those colors?</button>
   </div>
 
-  <div class="skills-life-bar">
-    <h3>Skills</h3>
-    <div class="skills-list" id="skills-list">
-      <!-- Skills will dynamically change -->
-    </div>
-  </div>
-
   <!-- Main Portfolio Section with Game-like Buttons -->
   <div class="container">
     <div class="card animated-card">
@@ -54,7 +47,7 @@
 
       <div class="info">
         <p>Writing code since <strong>2007</strong></p>
-        <p>Email: <a href="mailto:dzikilubiabloto@protonmail.com">dzikilubiabloto@protonmail.com</a></p>
+        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
       </div>
 
       <!-- Game-like buttons -->
@@ -67,6 +60,14 @@
       <div class="cv-banner">
         <a href="https://github.com/dziczas/dziczas/raw/main/AgataTalitaAndrzejewskaResume-2.pdf" download>📄 Download My CV</a>
       </div>
+    </div>
+  </div>
+
+  <!-- Skills Section -->
+  <div class="skills-life-bar">
+    <h3>Skills</h3>
+    <div class="skills-list" id="skills-list">
+      <!-- Skills will dynamically change -->
     </div>
   </div>
 
@@ -144,8 +145,6 @@
     <div class="bar"><div class="fill" style="width: 75%;"></div></div>
   </div>
 </div>
-
-
     `;
 
     // Backend skills
@@ -221,7 +220,6 @@
     <div class="bar"><div class="fill" style="width: 40%;"></div></div>
   </div>
 </div>
-
     `;
 
     // Function to animate skill changes
@@ -245,9 +243,8 @@
 
     // Redirect to serious portfolio (God Mode)
     function godMode() {
-  window.open('https://talita.dev/serious', '_blank'); // Replace with your serious portfolio URL
-}
-
+      window.open('https://talita.dev/serious', '_blank'); // Replace with your serious portfolio URL
+    }
 
     // Load frontend skills by default
     window.onload = function() {
@@ -255,102 +252,58 @@
     };
 
     let currentPalette = 0; // To track the current palette index
-  let colorClickCount = 0; // To track how many times the button has been clicked
+    let colorClickCount = 0; // To track how many times the button has been clicked
 
-  const palettes = [
-  {primary: '#ff4081', secondary: '#7c4dff', tertiary: '#00e676', bg: '#f0f4c3', accent: '#ffeb3b'},  
-  {primary: '#3498db', secondary: '#2ecc71', tertiary: '#f39c12', bg: '#ecf0f1', accent: '#e74c3c'},
-  {primary: '#e67e22', secondary: '#f39c12', tertiary: '#9b59b6', bg: '#f5f5f5', accent: '#34495e'},
-  {primary: '#16a085', secondary: '#27ae60', tertiary: '#f1c40f', bg: '#ecf0f1', accent: '#e74c3c'},
-  {primary: '#2980b9', secondary: '#d35400', tertiary: '#8e44ad', bg: '#bdc3c7', accent: '#c0392b'},
-  {primary: '#1abc9c', secondary: '#2ecc71', tertiary: '#3498db', bg: '#ecf0f1', accent: '#e67e22'},
-  {primary: '#c0392b', secondary: '#8e44ad', tertiary: '#2980b9', bg: '#f1c40f', accent: '#27ae60'},
-  {primary: '#ff6f61', secondary: '#6b5b95', tertiary: '#88b04b', bg: '#d5d8dc', accent: '#f7cac9'},
-  {primary: '#34495e', secondary: '#2ecc71', tertiary: '#f1c40f', bg: '#ecf0f1', accent: '#e74c3c'},
-  {primary: '#ffcc5c', secondary: '#96ceb4', tertiary: '#d9534f', bg: '#ffefd5', accent: '#ff6f61'},
-  {primary: '#2a363b', secondary: '#e84a5f', tertiary: '#ff847c', bg: '#fecea8', accent: '#99b898'},
-  {primary: '#ff5a5f', secondary: '#00a699', tertiary: '#fc642d', bg: '#f5f5f5', accent: '#484848'},
-  {primary: '#ffa69e', secondary: '#ff686b', tertiary: '#ff6f59', bg: '#ffecd2', accent: '#fff3b0'},
-  {primary: '#4a4e4d', secondary: '#0e9aa7', tertiary: '#3da4ab', bg: '#f6cd61', accent: '#fe8a71'},
-  {primary: '#f67280', secondary: '#c06c84', tertiary: '#6c5b7b', bg: '#f8b195', accent: '#355c7d'},
-  {primary: '#00796b', secondary: '#26a69a', tertiary: '#ffeb3b', bg: '#ffffff', accent: '#ff5722'},
-  {primary: '#0e2431', secondary: '#fc3a52', tertiary: '#f9f7f3', bg: '#f3e0d2', accent: '#56a3a6'},
-  {primary: '#ff9a8b', secondary: '#ff6a88', tertiary: '#ff99ac', bg: '#fcd2d1', accent: '#ff7597'},
-  {primary: '#5c6bc0', secondary: '#3949ab', tertiary: '#ffca28', bg: '#e8eaf6', accent: '#7e57c2'},
-  {primary: '#e91e63', secondary: '#ff4081', tertiary: '#9c27b0', bg: '#fce4ec', accent: '#4a148c'},
-  {primary: '#ff9800', secondary: '#ff5722', tertiary: '#ffc107', bg: '#ffecb3', accent: '#f44336'},
-];
+    const palettes = [
+      {primary: '#ff4081', secondary: '#7c4dff', tertiary: '#00e676', bg: '#f0f4c3', accent: '#ffeb3b'},  
+      {primary: '#3498db', secondary: '#2ecc71', tertiary: '#f39c12', bg: '#ecf0f1', accent: '#e74c3c'},
+      {primary: '#e67e22', secondary: '#f39c12', tertiary: '#9b59b6', bg: '#f5f5f5', accent: '#34495e'},
+      {primary: '#16a085', secondary: '#27ae60', tertiary: '#f1c40f', bg: '#ecf0f1', accent: '#e74c3c'},
+      {primary: '#2980b9', secondary: '#d35400', tertiary: '#8e44ad', bg: '#bdc3c7', accent: '#c0392b'},
+      {primary: '#1abc9c', secondary: '#2ecc71', tertiary: '#3498db', bg: '#ecf0f1', accent: '#e67e22'},
+      {primary: '#c0392b', secondary: '#8e44ad', tertiary: '#2980b9', bg: '#f1c40f', accent: '#27ae60'},
+      {primary: '#ff6f61', secondary: '#6b5b95', tertiary: '#88b04b', bg: '#d5d8dc', accent: '#f7cac9'},
+      {primary: '#34495e', secondary: '#2ecc71', tertiary: '#f1c40f', bg: '#ecf0f1', accent: '#e74c3c'},
+      {primary: '#ffcc5c', secondary: '#96ceb4', tertiary: '#d9534f', bg: '#ffefd5', accent: '#ff6f61'},
+      {primary: '#2a363b', secondary: '#e84a5f', tertiary: '#ff847c', bg: '#fecea8', accent: '#99b898'},
+      {primary: '#ff5a5f', secondary: '#00a699', tertiary: '#fc642d', bg: '#f5f5f5', accent: '#484848'},
+      {primary: '#ffa69e', secondary: '#ff686b', tertiary: '#ff6f59', bg: '#ffecd2', accent: '#fff3b0'},
+      {primary: '#4a4e4d', secondary: '#0e9aa7', tertiary: '#3da4ab', bg: '#f6cd61', accent: '#fe8a71'},
+      {primary: '#f67280', secondary: '#c06c84', tertiary: '#6c5b7b', bg: '#f8b195', accent: '#355c7d'},
+      {primary: '#00796b', secondary: '#26a69a', tertiary: '#ffeb3b', bg: '#ffffff', accent: '#ff5722'},
+      {primary: '#0e2431', secondary: '#fc3a52', tertiary: '#f9f7f3', bg: '#f3e0d2', accent: '#56a3a6'},
+      {primary: '#ff9a8b', secondary: '#ff6a88', tertiary: '#ff99ac', bg: '#fcd2d1', accent: '#ff7597'},
+      {primary: '#5c6bc0', secondary: '#3949ab', tertiary: '#ffca28', bg: '#e8eaf6', accent: '#7e57c2'},
+      {primary: '#e91e63', secondary: '#ff4081', tertiary: '#9c27b0', bg: '#fce4ec', accent: '#4a148c'},
+      {primary: '#ff9800', secondary: '#ff5722', tertiary: '#ffc107', bg: '#ffecb3', accent: '#f44336'},
+    ];
 
+    function toggleColors() {
+      const body = document.body;
+      currentPalette = (currentPalette + 1) % palettes.length;
+      const bgColor = palettes[currentPalette].bg;
+      const textColor = getTextColorBasedOnBg(bgColor);
 
-  // // Function to toggle between multiple color palettes
-  // function toggleColors() {
-  //   const body = document.body;
-    
-  //   // Increment the palette index and reset if it exceeds the array length
-  //   currentPalette = (currentPalette + 1) % palettes.length;
+      body.style.setProperty('--primary-color', palettes[currentPalette].primary);
+      body.style.setProperty('--secondary-color', palettes[currentPalette].secondary);
+      body.style.setProperty('--tertiary-color', palettes[currentPalette].tertiary);
+      body.style.setProperty('--bg-color', bgColor);
+      body.style.setProperty('--accent-color', palettes[currentPalette].accent);
+      body.style.setProperty('--text-color', textColor);
 
-  //   // Update CSS variables with the new palette colors
-  //   body.style.setProperty('--primary-color', palettes[currentPalette].primary);
-  //   body.style.setProperty('--secondary-color', palettes[currentPalette].secondary);
-  //   body.style.setProperty('--tertiary-color', palettes[currentPalette].tertiary);
-  //   body.style.setProperty('--bg-color', palettes[currentPalette].bg);
-  //   body.style.setProperty('--accent-color', palettes[currentPalette].accent);
+      colorClickCount++;
+    }
 
-  //   // Increment the click counter
-  //   colorClickCount++;
+    function getTextColorBasedOnBg(bgColor) {
+      const luminance = getLuminance(bgColor);
+      return luminance > 0.5 ? '#000000' : '#ffffff'; 
+    }
 
-  //   // After 3 clicks, show the "No colors please" button
-  //   if (colorClickCount >= 3) {
-  //     document.getElementById('no-colors').style.display = 'block';
-  //   }
-  // }
-
-
-
-  // Function to calculate luminance of a color (for readability)
-function getLuminance(hexColor) {
-  const rgb = hexColor.replace('#', '').match(/.{1,2}/g).map(x => parseInt(x, 16) / 255);
-  const [r, g, b] = rgb.map(c => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)));
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-}
-
-// Function to determine whether to use light or dark text based on the background luminance
-function getTextColorBasedOnBg(bgColor) {
-  const luminance = getLuminance(bgColor);
-  return luminance > 0.5 ? '#000000' : '#ffffff'; // If background is light, return black, else white
-}
-
-// Function to toggle between multiple color palettes
-function toggleColors() {
-  const body = document.body;
-  
-  // Increment the palette index and reset if it exceeds the array length
-  currentPalette = (currentPalette + 1) % palettes.length;
-
-  // Get the background color of the current palette
-  const bgColor = palettes[currentPalette].bg;
-
-  // Determine if text should be light or dark based on background color
-  const textColor = getTextColorBasedOnBg(bgColor);
-
-  // Update CSS variables with the new palette colors
-  body.style.setProperty('--primary-color', palettes[currentPalette].primary);
-  body.style.setProperty('--secondary-color', palettes[currentPalette].secondary);
-  body.style.setProperty('--tertiary-color', palettes[currentPalette].tertiary);
-  body.style.setProperty('--bg-color', bgColor);
-  body.style.setProperty('--accent-color', palettes[currentPalette].accent);
-
-  // Update text color based on the background luminance
-  body.style.setProperty('--text-color', textColor);
-
-  // Increment the click counter
-  colorClickCount++;
-
-  // After 3 clicks, show the "No colors please" button
-  if (colorClickCount >= 3) {
-    document.getElementById('no-colors').style.display = 'block';
-  }
-}
+    function getLuminance(hexColor) {
+      const rgb = hexColor.replace('#', '').match(/.{1,2}/g).map(x => parseInt(x, 16) / 255);
+      const [r, g, b] = rgb.map(c => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)));
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    }
 
   </script>
 </body>
