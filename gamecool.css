@@ -5,320 +5,137 @@
 }
 
 body {
-  font-family: 'Courier New', monospace;
-  background: #e0f7fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-  transition: all 0.5s ease;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Retro Colors */
-body {
-  --primary-color: #ff4081;
-  --secondary-color: #7c4dff;
-  --tertiary-color: #00e676;
-  --bg-color: #f0f4c3;
-  --accent-color: #ffeb3b;
-}
-
-/* Modern Color Palette */
-body.modern-palette {
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
-  --tertiary-color: #f39c12;
-  --bg-color: #ecf0f1;
-  --accent-color: #e74c3c;
-}
-
-/* Skills Section */
-.skills-life-bar {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.skills-life-bar h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.skill {
-  margin-bottom: 20px;
-}
-
-.skill p {
-  margin: 0;
-  font-size: 16px;
-  color: var(--primary-color);
-}
-
-.life-bar {
-  display: flex;
-  align-items: center;
-}
-
-.heart-icon {
-  width: 30px;
-  height: auto;
-  margin-right: 10px;
-}
-
-.bar {
-  position: relative;
-  width: 200px;
-  height: 20px;
-  background: var(--secondary-color);
-  border: 2px solid #000;
-  border-radius: 5px;
-}
-
-.fill {
-  height: 100%;
-  background-color: var(--accent-color);
-  border-radius: 3px;
-  transition: width 0.4s ease;
-}
-
-/* Color switcher button */
-.color-switch {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.color-toggle {
-  background: transparent;
-  color: var(--primary-color);
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: 'Courier New', monospace;
-  text-decoration: underline;
-  transition: color 0.4s ease;
-}
-
-.color-toggle:hover {
-  color: var(--secondary-color);
-}
-
-/* Main Retro Portfolio Frame */
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-  position: relative;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.card {
-  background: var(--bg-color);
-  border-radius: 15px;
-  padding: 30px;
-  width: 100%;
-  max-width: 450px;
-  text-align: center;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
-  position: relative;
-  z-index: 10;
-}
-
-.animated-card {
-  animation: float 3s ease-in-out infinite;
-}
-
-.profile-photo img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 5px solid var(--primary-color);
+h1, h2, h3 {
   margin-bottom: 20px;
-  animation: rotate 10s linear infinite;
 }
 
 h1 {
-  font-size: 32px;
-  color: var(--primary-color);
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+  font-size: 2.5em;
+  font-weight: 700;
 }
 
-.crazy-text {
-  animation: crazy-text-animation 3s ease-in-out infinite alternate;
+p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
 }
 
-@keyframes crazy-text-animation {
-  0% {
-    transform: rotate(0deg) scale(1);
-    color: var(--primary-color);
-  }
-  100% {
-    transform: rotate(-3deg) scale(1.05);
-    color: var(--secondary-color);
-  }
-}
-
-.subtitle {
-  font-size: 20px;
-  color: var(--tertiary-color);
-  font-style: italic;
-  margin-bottom: 30px;
-}
-
-.info p {
-  font-size: 18px;
-  color: var(--primary-color);
-  margin: 10px 0;
-}
-
-/* Game Buttons */
-.game-buttons {
-  margin-top: 30px;
-}
-
-.game-button {
-  display: block;
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 10px 20px;
-  margin: 10px auto;
-  font-size: 18px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-family: 'Courier New', monospace;
-  text-align: center;
-  transition: background-color 0.4s ease;
-}
-
-.game-button:hover {
-  background-color: var(--secondary-color);
-}
-
-/* CV Banner */
-.cv-banner {
-  background: var(--primary-color);
-  border-radius: 10px;
-  padding: 15px;
-  margin-top: 30px;
-  animation: shake 1.5s infinite;
-}
-
-.cv-banner a {
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
+a {
+  color: #0073e6;
   text-decoration: none;
 }
 
-.cv-banner:hover {
-  background: var(--secondary-color);
+a:hover {
+  text-decoration: underline;
 }
 
-/* Hover Shake Animation */
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  75% {
-    transform: translateX(5px);
-  }
+.main-header {
+  background-color: #1f2937;
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
 }
 
-/* Fade animation for skill switching */
-.skills-list {
-  transition: opacity 0.5s ease;
-}
-
-body {
-  font-family: 'Courier New', monospace;
-  background: var(--bg-color);
-  color: var(--text-color); /* Ensure text color adapts to the palette */
+.header-content {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  overflow: hidden;
-  transition: all 0.5s ease;
 }
 
-h1, h2, h3, p {
-  color: var(--text-color); /* Apply text color to various elements */
+.main-header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
 }
 
-/* Skill bar text and other elements */
-.skill p {
-  color: var(--text-color); /* Skill text will adjust based on contrast */
+.main-header p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
-/* -------- Mobile Styles Only -------- */
+.btn {
+  background-color: #0073e6;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #005bb5;
+}
+
+.about {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.skills {
+  padding: 60px 0;
+  background-color: #f9fafb;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills-column {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.skills-column h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.skills-column ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.skills-column li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.contact {
+  padding: 60px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.main-footer {
+  background-color: #1f2937;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.main-footer p {
+  font-size: 0.9em;
+}
+
 @media (max-width: 768px) {
-  body {
-    height: auto;
-    overflow: auto;
-  }
-
-  .container {
+  .skills-container {
     flex-direction: column;
-    padding: 10px;
   }
 
-  .card {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  .subtitle {
-    font-size: 16px;
-  }
-
-  .profile-photo img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .game-button {
-    font-size: 16px;
-    padding: 8px 15px;
-  }
-
-  .cv-banner a {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .skills-life-bar h3 {
-    font-size: 18px;
-  }
-
-  .bar {
-    width: 150px;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 20px;
-  }
-
-  .game-button, .cv-banner a {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-
-  .skills-life-bar h3 {
-    font-size: 16px;
-  }
-
-  .bar {
-    width: 120px;
+  .skills-column {
+    margin-right: 0;
+    margin-bottom: 40px;
   }
 }
