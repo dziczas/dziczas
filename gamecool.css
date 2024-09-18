@@ -8,35 +8,34 @@ body {
   font-family: 'Courier New', monospace;
   background: #e0f7fa;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
   transition: all 0.5s ease;
 }
 
-/* Main Retro Portfolio Frame */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 450px;
-  padding: 20px;
-  flex-direction: column;
+/* Retro Colors */
+body {
+  --primary-color: #ff4081;
+  --secondary-color: #7c4dff;
+  --tertiary-color: #00e676;
+  --bg-color: #f0f4c3;
+  --accent-color: #ffeb3b;
 }
 
-.card {
-  background: var(--bg-color);
-  border-radius: 15px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+/* Modern Color Palette */
+body.modern-palette {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --tertiary-color: #f39c12;
+  --bg-color: #ecf0f1;
+  --accent-color: #e74c3c;
 }
 
+/* Skills Section */
 .skills-life-bar {
   margin-top: 20px;
-  width: 100%;
   text-align: center;
 }
 
@@ -58,7 +57,6 @@ body {
 .life-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .heart-icon {
@@ -83,9 +81,190 @@ body {
   transition: width 0.4s ease;
 }
 
-/* Responsive Design */
+/* Color switcher button */
+.color-switch {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.color-toggle {
+  background: transparent;
+  color: var(--primary-color);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  text-decoration: underline;
+  transition: color 0.4s ease;
+}
+
+.color-toggle:hover {
+  color: var(--secondary-color);
+}
+
+/* Main Retro Portfolio Frame */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+}
+
+.card {
+  background: var(--bg-color);
+  border-radius: 15px;
+  padding: 30px;
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 10;
+}
+
+.animated-card {
+  animation: float 3s ease-in-out infinite;
+}
+
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid var(--primary-color);
+  margin-bottom: 20px;
+  animation: rotate 10s linear infinite;
+}
+
+h1 {
+  font-size: 32px;
+  color: var(--primary-color);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.crazy-text {
+  animation: crazy-text-animation 3s ease-in-out infinite alternate;
+}
+
+@keyframes crazy-text-animation {
+  0% {
+    transform: rotate(0deg) scale(1);
+    color: var(--primary-color);
+  }
+  100% {
+    transform: rotate(-3deg) scale(1.05);
+    color: var(--secondary-color);
+  }
+}
+
+.subtitle {
+  font-size: 20px;
+  color: var(--tertiary-color);
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.info p {
+  font-size: 18px;
+  color: var(--primary-color);
+  margin: 10px 0;
+}
+
+/* Game Buttons */
+.game-buttons {
+  margin-top: 30px;
+}
+
+.game-button {
+  display: block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  margin: 10px auto;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  transition: background-color 0.4s ease;
+}
+
+.game-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* CV Banner */
+.cv-banner {
+  background: var(--primary-color);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 30px;
+  animation: shake 1.5s infinite;
+}
+
+.cv-banner a {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cv-banner:hover {
+  background: var(--secondary-color);
+}
+
+/* Hover Shake Animation */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Fade animation for skill switching */
+.skills-list {
+  transition: opacity 0.5s ease;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background: var(--bg-color);
+  color: var(--text-color); /* Ensure text color adapts to the palette */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+h1, h2, h3, p {
+  color: var(--text-color); /* Apply text color to various elements */
+}
+
+/* Skill bar text and other elements */
+.skill p {
+  color: var(--text-color); /* Skill text will adjust based on contrast */
+}
+
+/* -------- Mobile Styles Only -------- */
 @media (max-width: 768px) {
+  body {
+    height: auto;
+    overflow: auto;
+  }
+
   .container {
+    flex-direction: column;
     padding: 10px;
   }
 
@@ -114,10 +293,6 @@ body {
   .cv-banner a {
     font-size: 14px;
     padding: 10px;
-  }
-
-  .skills-life-bar {
-    margin-top: 15px;
   }
 
   .skills-life-bar h3 {
